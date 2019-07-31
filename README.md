@@ -16,8 +16,9 @@
 
         ![executingProject](ConfigurationToOpen.png)
     
-* Case, be your preference utilize in your terminal the following command in folder that contain the file MovieCup.csproj:
-    * dotnet run --project ./MovieCup.csproj
+* Case, be your preference utilize in your terminal the following command:
+    * dotnet restore.
+    * dotnet run --project .MovieCup/MovieCup.csproj.
         * OBS.: The project is configured to use "http://localhost:5000"
         * This address is configured to show the index.html of the swagger
 
