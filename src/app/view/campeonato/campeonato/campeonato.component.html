@@ -1,0 +1,7 @@
+<ul class="nav flex-column">
+  <li class="nav-item" *ngFor="let campeonato of campeonatos">
+    <a class="nav-link" href="campeonato/{{ campeonato.id }}/finalistas">{{
+      campeonato.nome
+    }}</a>
+  </li>
+</ul>

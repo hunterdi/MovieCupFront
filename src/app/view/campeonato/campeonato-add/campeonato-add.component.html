@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="txtNomeCampeonato">Nome do Campeonato</label>
+    <input
+      type="text"
+      class="form-control"
+      id="txtNomeCampeonato"
+      placeholder="Nome do Campeonato"
+      formControlName="txtNomeCampeonato"
+    />
+    <div
+      *ngIf="
+        form.controls['txtNomeCampeonato'].invalid &&
+        (form.controls['txtNomeCampeonato'].dirty ||
+          form.controls['txtNomeCampeonato'].touched)
+      "
+      class="alert alert-danger"
+    >
+      Informe o nome do campeonato.
+    </div>
+  </div>
+  <div class="form-group">
+    <div
+      class="form-check"
+      formArrayName="chkbFilmes"
+      *ngFor="let filme of filmes; let i = index"
+    >
+      <label class="form-check-label">
+        <input
+          class="form-check-input position-static"
+          type="checkbox"
+          [id]="filme.id"
+          [formControlName]="i"
+        />
+        {{ filme.titulo }}
+      </label>
+    </div>
+    <div
+      *ngIf="
+        form.controls['chkbFilmes'].invalid &&
+        (form.controls['chkbFilmes'].dirty ||
+          form.controls['chkbFilmes'].touched)
+      "
+      class="alert alert-danger"
+    >
+      Selecione exatamente 8 filmes
+    </div>
+  </div>
+  <div class="form-group">
+    <button
+      (click)="CriarCampeonato()"
+      class="btn btn-primary"
+      [disabled]="form.pristine || form.invalid"
+    >
+      Criar Campeonato
+    </button>
+  </div>
+</form>

@@ -1,0 +1,85 @@
+<div class="card">
+  <div class="card-header">
+    Filmes Participantes
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let filme of filmesCompetindos">
+        {{ filme.filme.titulo }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Classificação
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group" id="list-tab" role="tablist">
+          <a
+            *ngFor="let classificacao of classificacoes; let i = index"
+            class="list-group-item list-group-item-action"
+            id="list-{{ classificacao.id }}-list"
+            data-toggle="list"
+            href="#list-{{ classificacao.id }}"
+            role="tab"
+            aria-controls="i"
+            >{{ i + 1 }}&ordm; Classificação
+          </a>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            *ngFor="let classificacao of classificacoes; let i = index"
+            class="tab-pane fade"
+            id="list-{{ classificacao.id }}"
+            role="tabpanel"
+            aria-labelledby="list-home-list"
+          >
+            <ul
+              *ngFor="let disputa of classificacao.disputa"
+              class="list-group list-group-horizontal"
+            >
+              <li
+                *ngIf="disputa.desafiado != null"
+                class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning"
+              >
+                {{ disputa.desafiado.titulo }}&nbsp;&nbsp;<span
+                  class="badge badge-primary badge-pill"
+                  >{{ disputa.desafiado.nota }}</span
+                >
+              </li>
+              <li
+                *ngIf="disputa.desafiado != null && disputa.desafiante != null"
+                class="list-group-item list-group-item-danger"
+              >
+                X
+              </li>
+              <li
+                *ngIf="disputa.desafiante != null"
+                class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning"
+              >
+                {{ disputa.desafiante.titulo }}&nbsp;&nbsp;<span
+                  class="badge badge-primary badge-pill"
+                  >{{ disputa.desafiante.nota }}</span
+                >
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center list-group-item-success"
+              >
+                {{ disputa.vencedor.titulo }}&nbsp;&nbsp;<span
+                  class="badge badge-primary badge-pill"
+                  >Vencedor</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
