@@ -1,27 +1,27 @@
 # MovieCup
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+## Repositories
+    * Front: https://github.com/hunterdi/MovieCupFront
+    * Back: https://github.com/hunterdi/MovieCup
+    
+## Requirements
+* Dotnet Core >= 2.2
+* Node >= 10.15
+* Visual Studio 2017 or VS Code >= 1.36.1
 
-## Development server
+## Starting Project
+* In the project folder contains two folders(MovieCup and MovieCupFront).
+* To go up the Back Project (MovieCup), case use Visual Studio 2017, open the project solution is that in folder.
+    * Start project with the follow image:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+        ![executingProject](ConfigurationToOpen.png)
+    
+* Case, be your preference utilize in your terminal the following command in folder that contain the file MovieCup.csproj:
+    * dotnet run --project ./MovieCup.csproj
+        * OBS.: The project is configured to use "http://localhost:5000"
+        * This address is configured to show the index.html of the swagger
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* To go up the Front Project (MovieCupFront), execute the following command in your terminal command:
+    * 1º npm i.
+    * 2º npm start.
+        * OBS.: The project is configured to use "http://loacalhost:42000".
